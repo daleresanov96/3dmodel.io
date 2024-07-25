@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    
+</head>
+
+<body>
+    <model-viewer id="color" src="assets/футболка.glb" interaction-prompt="none" poster="assets/футболка/футболка.webp"
+        tone-mapping="neutral" shadow-intensity="1" ar camera-controls touch-action="pan-y" alt="A 3D model carousel"
+        autoplay camera-orbit="0deg 75deg 100m" field-of-view="8deg">
+
+        <div id="ar-prompt">
+            <img src="assets/hand.png">
+        </div>
+
+        <button id="ar-failure">
+            AR is not tracking!
+        </button>
+
+        <div class="controls" id="color-controls">
+            <button id="buton_Red" class="color" rs data-color="#ff0000">Red</button>
+            <button id="buton_Green" class="color" data-color="#00ff00">Green</button>
+            <button id="buton_Blue" class="color" data-color="#0000ff">Blue</button>
+            <button id="buton_Tomato" class="color" data-color="#CD5C5C">Tomato</button>
+            <button id="buton_Orange" class="color" data-color="#FF8C00">Orange</button>
+            <button id="buton_DodgerBlue" class="color" data-color="#1E90FF">DodgerBlue</button>
+            <button id="buton_MediumSeaGreen" class="color" data-color="#3CB371">MediumSeaGreen</button>
+            <button id="buton_Gray" class="color" data-color="#808080">Gray</button>
+            <button id="buton_SlateBlue" class="color" data-color="#6A5ACD">SlateBlue</button>
+            <button id="buton_Violet" class="color" data-color="#EE82EE">Violet</button>
+            <button id="buton_LightGray" class="color" data-color="#D3D3D3">LightGray</button>
+        </div>
+
+
+        <div class="slider">
+            <div class="slides">
+                <button class="slide selected" onclick="switchSrc(this, 'футболка')"
+                    style="background-image: url('assets/футболка.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'жилетка')"
+                    style="background-image: url('assets/жилетка.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'бушлат')"
+                    style="background-image: url('assets/бушлат.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'комбез')"
+                    style="background-image: url('assets/комбез.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'куртка')"
+                    style="background-image: url('assets/куртка.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'одежда')"
+                    style="background-image: url('assets/одежда.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'поварская_шапка')"
+                    style="background-image: url('assets/поварская_шапка.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'поварской_китель')"
+                    style="background-image: url('assets/поварской_китель.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'фартук')"
+                    style="background-image: url('assets/фартук.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'футболка_с_воротом')"
+                    style="background-image: url('assets/футболка_с_воротом.webp');">
+                </button><button class="slide" onclick="switchSrc(this, 'халат')"
+                    style="background-image: url('assets/халат.webp');"> </button>
+            </div>
+        </div>
+    </model-viewer>
+
+    <script type="module">
+        const modelViewerColor = document.querySelector("model-viewer#color");
+
+        document.querySelector('#color-controls').addEventListener('click', (event) => {
+            const colorString = event.target.dataset.color;
+            const [material] = modelViewerColor.model.materials;
+            material.pbrMetallicRoughness.setBaseColorFactor(colorString);
+
+        });
+        const modelViewer = document.querySelector("model-viewer");
+        window.switchSrc = (element, name) => {
+            const base = "assets/" + name;
+            modelViewer.src = base + '.glb';
+            modelViewer.poster = base + '.webp';
+            const slides = document.querySelectorAll(".slide");
+            slides.forEach((element) => { element.classList.remove("selected"); });
+            element.classList.add("selected");
+        };
+
+        document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+            // Keep slider interactions from affecting the XR scene.
+            ev.preventDefault();
+        });
+
+    </script>
+</body>
+
+</html>
