@@ -8,6 +8,8 @@
             overflow-x: hidden;
             height: 30vh;
             width: 100%;
+            position: absolute;
+            right: 0px;
         }
 
         #ar-button {
