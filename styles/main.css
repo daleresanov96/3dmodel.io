@@ -1,19 +1,27 @@
-        
-        body{
-            background-color: #f1e4a4;
+        body {
+            background-image: url(../assets/shop.jpeg);
+            background-color: #cccccc;
+           
+            height: 100vh;
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
         }
+
         /* This keeps child nodes hidden while the element loads */
         :not(:defined)>* {
             display: none;
         }
 
         model-viewer {
-            background-color: #f0d68b;
             overflow-x: hidden;
             position: absolute;
             height: 100vh;
-            width: 50%;
+            width: 60%;
             right: 0px;
+            border: 5px solid #f4ba1b;
         }
 
         #ar-button {
@@ -31,7 +39,8 @@
             font-family: Roboto Regular, Helvetica Neue, sans-serif;
             font-size: 14px;
             color: #4285f4;
-            height: 36px;
+            height: 36vh;
+            width: 50%;
             line-height: 36px;
             border-radius: 18px;
             border: 1px solid #DADCE0;
@@ -108,8 +117,7 @@
         .slides {
             display: flex;
             overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
+            
             -webkit-overflow-scrolling: touch;
         }
 
@@ -121,7 +129,7 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            background-color: #f1e4a4;
+            background-color: #42403a;
             margin-right: 40px;
             border-radius: 10px;
             border: none;
@@ -139,47 +147,34 @@
         .slide:focus-visible {
             outline: 4px solid #4285f4;
         }
-
-        #buton_Red {
-            background-color: Red;
+        .color1div {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+            position: absolute;
+            bottom: 16px;
+            position: relative;
+            top: 10px;
         }
 
-        #buton_Green {
-            background-color: Green;
+        .color2div {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
-
-        #buton_Blue {
-            background-color: Blue;
-        }
-
-        #buton_Tomato {
-            background-color: Tomato;
-        }
-
-        #buton_Orange {
-            background-color: Orange;
-        }
-
-        #buton_DodgerBlue {
-            background-color: DodgerBlue;
-        }
-
-        #buton_MediumSeaGreen {
-            background-color: MediumSeaGreen;
-        }
-
-        #buton_Gray {
-            background-color: Gray;
-        }
-
-        #buton_SlateBlue {
-            background-color: slateblue;
-        }
-
-        #buton_Violet {
-            background-color: Violet;
-        }
-
-        #buton_LightGray {
-            background-color: LightGray;
+        .color {
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            width: 150px;
+            height: 100px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #42403a;
+            margin-right: 40px;
+            border-radius: 10px;
+            border: none;
+            display: flex;
         }
