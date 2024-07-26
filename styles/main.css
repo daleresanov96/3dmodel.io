@@ -1,3 +1,7 @@
+        
+        body{
+            background-color: #f1e4a4;
+        }
         /* This keeps child nodes hidden while the element loads */
         :not(:defined)>* {
             display: none;
