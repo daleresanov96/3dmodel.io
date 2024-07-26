@@ -6,9 +6,9 @@
         model-viewer {
             background-color: #f0d68b;
             overflow-x: hidden;
+            position: absolute;
             height: 30vh;
             width: 100%;
-            position: absolute;
             right: 0px;
         }
 
