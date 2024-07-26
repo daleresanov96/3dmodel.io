@@ -124,8 +124,8 @@
         .slide {
             scroll-snap-align: start;
             flex-shrink: 0;
-            width: 150px;
-            height: 100px;
+            width: 15vh;
+            height: 10vh;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
@@ -167,8 +167,8 @@
         .color {
             scroll-snap-align: start;
             flex-shrink: 0;
-            width: 150px;
-            height: 100px;
+            width: 15vh;
+            height: 10vh;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
