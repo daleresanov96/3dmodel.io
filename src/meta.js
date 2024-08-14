@@ -1,3 +1,4 @@
+import module from "https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js";
 const mannequinCanvas = document.getElementById('mannequinCanvas');
 const ctx = mannequinCanvas.getContext('2d');
 const colorPicker = document.getElementById('color-picker');
